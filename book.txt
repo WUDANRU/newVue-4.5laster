@@ -1,0 +1,48 @@
+vue3 脚手架@vue/cli4.5出现: Object(...) is not a function，history: createWebHashHistory()报错和页面显示不出内容
+解决：进入ma的cmd输入命令：npm install vue-router@next
+
+http://localhost:8080/#/index后页面显示不出内容，控制台出现了浅色橘色的提示，查了后是因为下一句
+app.mount('#app') //这个需要确保app.mount('#app')在所有app.use后
+
+npm i -g cnpm
+cnpm i -g @vue/cli
+vue --version  //4.5.15
+vue create mall或Vue项目管理器的创建         y        default
+cd mall
+vue ui ( 或cnpm run serve和vue ui )
+导入mall文件夹
+
+不管用：Vue add element-plus或cnpm install element-plus 生成vue-cli-plugin-element-plus插件
+
+cnpm uninstall @vue/cli 4.5.15 -g
+
+
+vue项目报错可以卸载node_modules(相当于cnpm update)
+cnpm install rimraf -g
+rimraf node_modules
+
+拷贝文件副本运行npm run serve后报错Cannot find module '@vue/cli-shared-utils'
+解决：只需要先运行一下  cnpm update 重新更新一下依赖，在运行一下项目就可以了
+
+vue.config.js打包vue单文件  控制台输入命令行,npx vue-cli-service inspect --mode production,ctrl+f后搜索(.vue)可以看到匹配.vue文件的test: /\.vue$/,
+
+这个是使用还是添加还是替换
+.plugin("ignore") .use( new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn$/) );
+
+
+order-confirm
+order-invoice
+user-path-edit
+user-path-list
+user-set
+user-userinfo
+new-list
+my-my
+msg-list
+logistics-detail
+search
+search-list
+list
+class
+cart
+index
